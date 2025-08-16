@@ -4,6 +4,9 @@
   "scripts": {
     "dev": "node scripts/build.mjs",
     "build": "node scripts/build.mjs --production"
+    "server": "tsx server/index.ts",
+"dev:all": "concurrently \"npm:dev\" \"npm:server\""
+
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -64,6 +67,8 @@
     "@types/jsonwebtoken": "latest",
     "@types/cors": "latest",
     "@types/multer": "latest"
+    "tsx": "^4.19.1",
+"concurrently": "^9.1.0"
   },
   "devDependencies": {
     "@types/react": "^19.1.3",

@@ -1,0 +1,3 @@
+SYNC CHECK MARKER
+This file exists only in the online project to verify whether your local files auto-sync.
+如果你在本地运行 Test-Path ".\SYNC_MARKER.txt" 返回 False，说明本地与在线项目不会自动同步（预期）。

@@ -1,0 +1,26 @@
+/**
+ * gold.css
+ * Global, scoped border color override to "gold" for all Tailwind border utilities.
+ * Scope: only inside .app-gold-border to avoid leaking to external/embedded content.
+ */
+
+/* Core border utilities */
+.app-gold-border .border,
+.app-gold-border .border-t,
+.app-gold-border .border-b,
+.app-gold-border .border-l,
+.app-gold-border .border-r {
+  border-color: #D4AF37 !important; /* classic gold */
+}
+
+/* Tailwind divide utilities (tables, lists) */
+.app-gold-border .divide-y > :not([hidden]) ~ :not([hidden]),
+.app-gold-border .divide-x > :not([hidden]) ~ :not([hidden]) {
+  border-color: #D4AF37 !important;
+}
+
+/* Optional: subtle tweak for focus-visible outlines that rely on border color semantics (no ring change) */
+.app-gold-border .focus-within\\:border,
+.app-gold-border .focus\\:border {
+  border-color: #D4AF37 !important;
+}

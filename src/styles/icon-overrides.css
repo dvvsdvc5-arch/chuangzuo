@@ -1,0 +1,30 @@
+/**
+ * icon-overrides.css
+ * Global icon and tiny layout overrides.
+ * Update: Center the brand text inside the sticky header without changing other elements.
+ */
+
+/* 
+  Center the brand name (the 2nd span child in the main sticky header).
+  - Keep the rest (left logo, right actions) unchanged.
+  - Use pointer-events: none so it won't block clicks on the right icons.
+  - This targets the single app header that already has Tailwind classes:
+    header.sticky.top-0.relative ...
+*/
+header.sticky.top-0.relative > span:nth-of-type(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+  /* Ensure it stays above the background but below action buttons if needed */
+  z-index: 0;
+}
+
+/* Keep action buttons above the centered brand text just in case */
+header.sticky.top-0.relative .ml-auto {
+  position: relative;
+  z-index: 1;
+}
